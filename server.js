@@ -1,9 +1,6 @@
 const inquirer = require('inquierer');
 const mysql = require('mysql2');
 
-// Express middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
 
 // Connect to database
 const db = mysql.createConnection(
@@ -12,8 +9,24 @@ const db = mysql.createConnection(
     // MySQL username,
     user: 'root',
     // TODO: Add MySQL password
-    password: '',
-    database: 'books_db'
+    password: 'Iggyberto13',
+    database: 'employee_db'
   },
-  console.log(`Connected to the books_db database.`)
+  console.log(`Connected to the employees database.`)
 );
+
+
+function runApp() {
+    inquirer.prompt({
+        name: 'startQuestions',
+        type: 'list',
+        message: 'What would you like to do?',
+        choices: ['View All Employees', 'Search an Employee', 'Search Employee by Department', 'Search Employee by Role', 'Add Employee', 'Remove Employee', 'Add Department', 'Add Role', 'Quit']
+    }).then(function (answer) 
+}
+
+
+
+
+
+
