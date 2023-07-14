@@ -6,6 +6,19 @@ I WANT to be able to view and manage the departments, roles, and employees in my
 SO THAT I can organize and plan my business
 
 
+Requirements
+
+Node.js | Inquirer | MySQL
+
+Once Installed:
+
+    Clone the Repository on to your machine.
+    Open the terminal and ensure you are in the right file path.
+    Run the command npm install to download the packages.
+    Then run the command node index.js to run the software.
+    The command prompt will begin on your terminal
+
+
 ### Acceptance Criteria
 
 GIVEN a command-line application that accepts user input
