@@ -1,24 +1,24 @@
 const inquirer = require('inquirer');
-const db = require('./db/connection');
 const mysql = require('mysql');
 const express = require('express');
-const { connection } = require('./db');
+const db = require('./db');
 const router = express.Router();
 
 
-db.connect(async function () {
-    start();
-})
+//db.connect(async function () {
+//    start();
+//})
 
-function mainMenu() {
-    inquirer
+
+ function mainMenu() {
+  inquirer
       .prompt([
         {
           type: 'list',
           name: 'option',
           message: 'What would you like to do?',
           choices: [
-            'View all departments',
+            'View all departments', 
             'View all roles',
             'View all employees',
             'Add a department',
@@ -53,7 +53,7 @@ function mainMenu() {
             updateEmployeeRole();
             break;
           case 'Exit':
-            connection.end();
+            process.exit();
             break;
           default:
             console.log('Invalid option. Please choose again.');
@@ -67,7 +67,7 @@ function mainMenu() {
   // Option: View all departments
   function viewAllDepartments() {
     const query = 'SELECT * FROM departments';
-    connection.query(query, (err, res) => {
+    db.query(query, (err, res) => {
       if (err) throw err;
       console.table(res);
       mainMenu();
@@ -77,7 +77,7 @@ function mainMenu() {
   // Option: View all roles
   function viewAllRoles() {
     const query = 'SELECT * FROM roles';
-    connection.query(query, (err, res) => {
+    db.query(query, (err, res) => {
       if (err) throw err;
       console.table(res);
       mainMenu();
@@ -137,7 +137,7 @@ function mainMenu() {
       .then((answer) => {
         const query =
           'INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?)';
-        connection.query(
+        db.query(
           query,
           [answer.roleTitle, answer.roleSalary, answer.roleDepartment],
           (err, res) => {
@@ -177,7 +177,7 @@ function mainMenu() {
       .then((answer) => {
         const query =
           'INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)';
-        connection.query(
+        db.query(
           query,
           [
             answer.employeeFirstName,
