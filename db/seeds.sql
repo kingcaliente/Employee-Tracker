@@ -22,7 +22,7 @@ VALUES
 ('Dante', 'Martin', 2, 2),
 ('Jon', 'Moxley', 3, 3),
 ('Maxwell', 'Freedman', 4, 4),
-('Wheeler', 'Yuta',5, '5'),
-('Orange', 'Cassidy','1', '1'),
-('Kenny', 'Omega','2', '2');
+('Wheeler', 'Yuta',5, 5),
+('Orange', 'Cassidy',1, 1),
+('Kenny', 'Omega',2, 2);
 
