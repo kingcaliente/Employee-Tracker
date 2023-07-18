@@ -1,13 +1,11 @@
 const inquirer = require('inquirer');
-const mysql = require('mysql');
+const mysql = require('mysql2');
+const consoleTable = require('console.table');
 const express = require('express');
 const db = require('./db');
 const router = express.Router();
 
 
-//db.connect(async function () {
-//    start();
-//})
 
 
  function mainMenu() {
@@ -67,7 +65,7 @@ const router = express.Router();
   // Option: View all departments
   function viewAllDepartments() {
     const query = 'SELECT * FROM departments';
-    db.query(query, (err, res) => {
+    connection.query(query, (err, res) => {
       if (err) throw err;
       console.table(res);
       mainMenu();
@@ -77,7 +75,7 @@ const router = express.Router();
   // Option: View all roles
   function viewAllRoles() {
     const query = 'SELECT * FROM roles';
-    db.query(query, (err, res) => {
+    connection.query(query, (err, res) => {
       if (err) throw err;
       console.table(res);
       mainMenu();

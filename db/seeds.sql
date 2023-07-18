@@ -16,7 +16,7 @@ VALUES
 ('Tag Team Champion', 23000, 4),
 ('Intercontinental Champion', 38000, 5); 
 
-INSERT INTO employees(first_name, last_name, roles_id, manager_id)
+INSERT INTO employees(first_name, last_name, role_id, manager_id)
 VALUES
 ('Luis', 'Pardo', 1, 1),
 ('Dante', 'Martin', 2, 2),
