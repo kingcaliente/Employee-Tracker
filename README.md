@@ -3,16 +3,16 @@
 ### User Story
 AS A business owner
 I WANT to be able to view and manage the departments, roles, and employees in my company
-SO THAT I can organize and plan my business
+SO THAT I can organize and plan my business 
 ![Capture2](https://github.com/kingcaliente/Employee-Tracker/assets/15383027/4679ff67-e732-4dbe-b305-6e791da36583)
 
 ![snsht](https://github.com/kingcaliente/Employee-Tracker/assets/15383027/599b455c-4b7e-4c06-93d8-3459b9478a27)
 
-Requirements
 
 Node.js | Inquirer | MySQL
 
-Once Installed:
+ 
+Requirements Once Installed:
 
     Clone the Repository on to your machine.
     Open the terminal and ensure you are in the right file path.
